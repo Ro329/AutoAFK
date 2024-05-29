@@ -37,7 +37,7 @@ else:
     settings = os.path.join(cwd, 'settings.ini')
 config.read(settings)
 
-version = "0.18.1"
+version = "0.18.2"
 
 repo_releases = requests.get('https://api.github.com/repos/Hammanek/AutoAFK/releases/latest')
 json = repo_releases.json() if repo_releases and repo_releases.status_code == 200 else None
@@ -1101,10 +1101,20 @@ def push():
 
 # Windows notification
 def desktopNotification(msg):
+    # Define icon paths
+    primary_path = 'img/auto.ico'
+    fallback_path = '_internal/img/auto.ico'
+
+    # Check if the primary path exists
+    if os.path.exists(primary_path):
+        icon_path = primary_path
+    else:
+        icon_path = fallback_path    
+
     notification.notify(
         title='AutoAFK ' + version,
         message=msg,
-        app_icon="img/auto.ico",  # If you want to display an icon, provide the path here
+        app_icon=icon_path,  # If you want to display an icon, provide the path here
         timeout=5,  # Duration the notification should be displayed (in seconds)
     )
 
