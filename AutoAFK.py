@@ -162,8 +162,8 @@ class App(customtkinter.CTk):
         #self.textbox.insert('end',  'Github.com/Fortigate/AutoAFK/\n')
         #self.textbox.insert('end', 'Discord DM: ', 'purple')
         #self.textbox.insert('end',  'Jc.2\n')
-        self.textbox.insert('end', 'Discord chats:\n', 'purple')
-        self.textbox.insert('end', '• afk.hamman.eu/discord in #auto-afk\n', 'purple')
+        self.textbox.insert('end', 'Discord chat:\n', 'purple')
+        #self.textbox.insert('end', '• afk.hamman.eu/discord in #auto-afk\n', 'purple')
         self.textbox.insert('end', '• dsc.gg/floofpire in #auto-afk\n\n', 'purple')
 
         # Pause/resume buttom
